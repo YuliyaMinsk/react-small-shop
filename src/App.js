@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Preloader = React.lazy(() => import('./components/layouts/Preloader'));
+const ScrollToTop = React.lazy(() => import('./components/layouts/ScrollToTop'));
+const Category = React.lazy(() => import('./components/pages/Category'));
+// const Cart = React.lazy(() => import("./components/pages/Cart"));
+// const PDP = React.lazy(() => import("./components/pages/PDP"));
+// const Errorpage = React.lazy(() => import("./components/pages/Errorpage"));
+
+class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Suspense fallback={<div></div>}>
+          <ScrollToTop>
+            <Preloader />
+            <Routes>
+              <Route exact path="/" component={Category} />
+            </Routes>
+          </ScrollToTop>
+        </Suspense>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
