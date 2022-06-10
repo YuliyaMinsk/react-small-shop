@@ -1,0 +1,77 @@
+// Constants
+
+$content-width: 1440px;
+$tablet-width: 768px;
+$mobile-big-width: 414px;
+$mobile-small-width: 320px;
+
+$color-primary: #5ece7b;
+$color-overlay: #393748; // 22%
+$color-light: #ffffff;
+$color-dark: #1d1f22;
+$color-gray: #eeeeee;
+
+$font1: 42px;
+$font2: 30px;
+$font3: 24px;
+$font4: 18px;
+$font5: 16px;
+$font6: 14px;
+
+// Mixins
+
+@mixin font($size, $ln-height: $size, $weight: normal, $style: normal) {
+  font-size: $size;
+  line-height: $ln-height;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin columns($width) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > * {
+    flex-basis: $width;
+  }
+}
+
+// Placeholders
+
+%transition {
+  transition: all 0.3s ease-out;
+}
+
+%font-raleway-light {
+  font-family: 'RalewayLight', 'Verdana', sans-serif;
+}
+%font-raleway-regular {
+  font-family: 'RalewayRegular', 'Verdana', sans-serif;
+}
+%font-raleway-medium {
+  font-family: 'RalewayMedium', 'Verdana', sans-serif;
+}
+%font-raleway-semibold {
+  font-family: 'RalewaySemiBold', 'Verdana', sans-serif;
+}
+%font-raleway-bold {
+  font-family: 'RalewayBold', 'Verdana', sans-serif;
+}
+
+%font-sourcesans-regular {
+  font-family: 'SourceSansProRegular', 'Verdana', sans-serif;
+}
+
+%font-robotocond-bold {
+  font-family: 'RobotoCondBold', 'Verdana', sans-serif;
+}
+
+%font-roboto-cold {
+  font-family: 'RobotoBold', 'Verdana', sans-serif;
+}
+%font-roboto-medium {
+  font-family: 'RobotoMedium', 'Verdana', sans-serif;
+}
+%font-roboto-regular {
+  font-family: 'RobotoRegular', 'Verdana', sans-serif;
+}

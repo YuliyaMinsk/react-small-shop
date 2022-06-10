@@ -1,0 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @extend %font-raleway-light;
+  @include font($font4, #{$font4 + 10px}, 300);
+}
