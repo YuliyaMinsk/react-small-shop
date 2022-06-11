@@ -4,7 +4,11 @@ const pagelocation = '';
 
 class Category extends Component {
   render() {
-    return <Fragment>CATEGORY</Fragment>;
+    return (
+      <>
+        <p>Heya!! How are you?</p>
+      </>
+    );
   }
 }
 
