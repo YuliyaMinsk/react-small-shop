@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, IndexRoute } from 'react-router-dom';
 
 import Layout from './components/layouts/Layout';
 // import Preloader from './components/sections/Preloader';
@@ -16,8 +16,11 @@ class Router extends React.Component {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Category />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="category/" element={<Category />}>
+              <Route path=":category" element={<Category />} />
+            </Route>
             <Route path="product" element={<Product />} />
+            <Route path="cart" element={<Cart />} />
             <Route path="*" element={<Errorpage />} />
           </Route>
         </Routes>

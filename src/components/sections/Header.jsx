@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import GetCategoryList from '../../GraphQL/Queries';
 
 class Header extends Component {
   render() {
     return (
       <header>
-        <Link to="/">All</Link>
-        <Link to="/clothes">Clothes</Link>
-        <Link to="/tech">Tech</Link>
+        <GetCategoryList />
+        <Link to="/delivery">Delivery</Link>
+        <Link to="/about">About</Link>
         <Link to="/cart">Cart</Link>
       </header>
     );
