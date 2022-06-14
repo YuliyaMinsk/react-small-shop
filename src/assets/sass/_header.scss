@@ -1,0 +1,15 @@
+header {
+  @extend %font-raleway-semibold;
+  @include font($font5, #{$font5 + 4px}, 600);
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px;
+    color: $color-primary;
+
+    .active {
+      color: $color-dark;
+    }
+  }
+}
