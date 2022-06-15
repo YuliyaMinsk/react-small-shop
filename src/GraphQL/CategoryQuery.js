@@ -1,8 +1,4 @@
-import React from 'react';
-import { Query } from 'react-apollo';
 import { gql } from '@apollo/client';
-import { NavLink } from 'react-router-dom';
-
 import client from './initialization';
 
 const CATEGORY_LIST = gql`
@@ -13,7 +9,7 @@ const CATEGORY_LIST = gql`
   }
 `;
 
-export const GetCategoryList = async () => {
+const GetCategoryList = async () => {
   const { loading, error, data } = await client.query({ query: CATEGORY_LIST });
 
   if (loading) return null;
@@ -27,3 +23,5 @@ export const GetCategoryList = async () => {
 
   return dataArray;
 };
+
+export default GetCategoryList;
