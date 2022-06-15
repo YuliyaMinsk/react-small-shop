@@ -6,10 +6,10 @@ import Header from '../sections/Header';
 class Layout extends Component {
   render() {
     return (
-      <>
+      <div className="container">
         <Header />
         <Outlet />
-      </>
+      </div>
     );
   }
 }

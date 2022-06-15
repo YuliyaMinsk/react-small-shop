@@ -1,7 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import { gql } from '@apollo/client';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const CATEGORY_LIST = gql`
   query GetCategoryList {
@@ -18,7 +18,7 @@ const GetCategoryList = () => (
       if (error) return <p>Error :(</p>;
 
       return data.categories.map(({ name }) => (
-        <Link to={`category/${name}`} key={name}>{`${name}`}</Link>
+        <NavLink to={`category/${name}`} key={name}>{`${name}`}</NavLink>
       ));
     }}
   </Query>

@@ -2,14 +2,31 @@ header {
   @extend %font-raleway-semibold;
   @include font($font5, #{$font5 + 4px}, 600);
 
+  display: flex;
+  justify-content: space-between;
+
   a {
+    position: relative;
+    display: inline-block;
+
     text-decoration: none;
     text-transform: uppercase;
-    padding: 20px;
     color: $color-primary;
 
-    .active {
-      color: $color-dark;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &.active {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -35px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $color-primary;
+      }
     }
   }
 }

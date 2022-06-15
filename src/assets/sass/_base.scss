@@ -6,3 +6,9 @@ body {
   @extend %font-raleway-light;
   @include font($font4, #{$font4 + 10px}, 300);
 }
+
+.container {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 20px;
+}
