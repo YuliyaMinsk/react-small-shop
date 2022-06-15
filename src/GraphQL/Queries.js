@@ -3,6 +3,8 @@ import { Query } from 'react-apollo';
 import { gql } from '@apollo/client';
 import { NavLink } from 'react-router-dom';
 
+import client from './initialization';
+
 const CATEGORY_LIST = gql`
   query GetCategoryList {
     categories {
@@ -11,17 +13,17 @@ const CATEGORY_LIST = gql`
   }
 `;
 
-const GetCategoryList = () => (
-  <Query query={CATEGORY_LIST}>
-    {({ loading, error, data }) => {
-      if (loading) return <p>Loading…</p>;
-      if (error) return <p>Error :(</p>;
+export const GetCategoryList = async () => {
+  const { loading, error, data } = await client.query({ query: CATEGORY_LIST });
 
-      return data.categories.map(({ name }) => (
-        <NavLink to={`category/${name}`} key={name}>{`${name}`}</NavLink>
-      ));
-    }}
-  </Query>
-);
+  if (loading) return null;
+  if (error) return `Error! ${error}`;
 
-export default GetCategoryList;
+  const dataArray = [];
+
+  data.categories.map(({ name }) => {
+    dataArray.push(name);
+  });
+
+  return dataArray;
+};
