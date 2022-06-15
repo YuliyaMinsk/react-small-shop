@@ -11,13 +11,16 @@ header {
 
     text-decoration: none;
     text-transform: uppercase;
-    color: $color-primary;
+    color: $color-dark;
 
     margin-bottom: 50px;
+    padding-top: 5px;
     padding-left: 20px;
     padding-right: 20px;
 
     &.active {
+      color: $color-primary;
+
       &::after {
         content: '';
         position: absolute;
@@ -27,6 +30,36 @@ header {
         height: 3px;
         background-color: $color-primary;
       }
+    }
+  }
+
+  .logo {
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+    width: 41px;
+    height: 41px;
+  }
+
+  .order {
+    a {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .currency {
+      background-image: url('../images/currency.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 41px;
+      height: 41px;
+    }
+
+    .cart {
+      background-image: url('../images/cart.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 41px;
+      height: 41px;
     }
   }
 }

@@ -19,19 +19,22 @@ class Header extends Component {
     return (
       <header>
         <div className="navigation">
-          {!!this.state.categories.length &&
-            this.state.categories.map((name) => (
-              <NavLink to={`category/${name}`} key={name}>{`${name}`}</NavLink>
-            ))}
-          <NavLink to="/delivery">Delivery</NavLink>
-          <NavLink to="/about">About</NavLink>
+          {this.state.categories.map((name) => (
+            <NavLink to={`category/${name}`} key={name}>{`${name}`}</NavLink>
+          ))}
         </div>
-        <div className="logo">
-          <Link className="logo-image" to="/"></Link>
+        <div>
+          <Link className="logo" to="/">
+            <span class="logo-image"></span>
+          </Link>
         </div>
         <div className="order">
-          <Link className="currency-image" to="/"></Link>
-          <Link className="cart-image" to="/cart"></Link>
+          <Link className="currency" to="/">
+            <span class="currency-image"></span>
+          </Link>
+          <Link className="cart" to="/cart">
+            <span class="cart-image"></span>
+          </Link>
         </div>
       </header>
     );
