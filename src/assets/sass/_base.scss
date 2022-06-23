@@ -1,11 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  margin-left: calc(100vw - 100%);
+}
+
+[hidden] {
+  display: none;
+}
+
+section,
+main,
+footer,
+header {
+  display: block;
 }
 
 body {
   @extend %font-raleway-light;
   @include font($font4, #{$font4 + 10px}, 300);
   color: $color-dark;
+  margin: 0;
 }
 
 .container {
@@ -26,4 +43,13 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+img {
+  border-style: none;
+}
+
+h1 {
+  font-size: $font1;
+  text-transform: capitalize;
 }

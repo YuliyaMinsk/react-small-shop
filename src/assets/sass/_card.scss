@@ -1,0 +1,14 @@
+.card {
+  padding: 15px;
+
+  .card-image-container {
+    .card-image {
+      object-fit: cover;
+      object-position: center top;
+      width: 354px;
+      height: 330px;
+      border: solid $color-primary;
+      border-width: 3px;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+
 import GetCategoryList from '../../GraphQL/CategoryQuery';
 import GetCurrencyList from '../../GraphQL/CurrencyQuery';
 
@@ -22,33 +23,27 @@ class Header extends Component {
   }
 
   render() {
-    console.log('this.state.currencies', this.state.currencies);
     return (
       <header>
         <div className="navigation">
           {this.state.categories.map((name) => (
-            <NavLink to={`category/${name}`} key={name}>{`${name}`}</NavLink>
+            <NavLink to={name === 'all' ? `/` : `${name}`} key={name}>{`${name}`}</NavLink>
           ))}
         </div>
         <div>
-          <Link className="logo" to="/">
-            <span class="logo-image"></span>
-          </Link>
+          <Link className="logo" to="/"></Link>
         </div>
         <div className="order">
-          <Link className="currency" to="/">
-            <span class="currency-image"></span>
+          <span className="currency">
             <ul>
               {this.state.currencies.map(({ label, symbol }) => (
-                <li>
-                  <NavLink to={`category/${label}`} key={label}>{`${symbol} ${label}`}</NavLink>
+                <li key={label}>
+                  <NavLink to={`${label}`} key={label}>{`${symbol} ${label}`}</NavLink>
                 </li>
               ))}
             </ul>
-          </Link>
-          <Link className="cart" to="/cart">
-            <span class="cart-image"></span>
-          </Link>
+          </span>
+          <Link className="cart" to="/cart"></Link>
         </div>
       </header>
     );
