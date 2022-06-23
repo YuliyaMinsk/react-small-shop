@@ -11,4 +11,8 @@
       border-width: 3px;
     }
   }
+
+  .card-price {
+    @extend %font-raleway-medium;
+  }
 }

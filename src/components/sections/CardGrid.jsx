@@ -14,7 +14,6 @@ class CardGrid extends Component {
     let promises = GetProductList();
     promises.then((result) => {
       let resultFiltered = result.filter((product) => product.category === this.props.category);
-      resultFiltered = result.filter((product) => product.name.startsWith('Air'));
       this.setState({ productsAll: result });
       this.setState({ productsFiltered: this.props.category === 'all' ? result : resultFiltered });
     });
