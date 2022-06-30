@@ -1,0 +1,20 @@
+.button {
+  @extend %font-raleway-semibold;
+  @include font($font5, #{$font4 + 10px}, $weight: 600);
+  border: none;
+  @extend %transition;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &-colored {
+    background-color: $color-primary;
+    color: $color-light;
+    &:hover {
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+
+.button-big {
+  padding: 16px 93px;
+}

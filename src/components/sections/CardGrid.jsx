@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
+import GetProductList from '../../GraphQL/ProductListQuery';
 import Card from './Card';
-import GetProductList from '../../GraphQL/ProductQuery';
 
 class CardGrid extends Component {
   constructor(props) {

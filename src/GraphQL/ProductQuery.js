@@ -1,40 +1,44 @@
 import { gql } from '@apollo/client';
 import client from './initialization';
 
-const PRODUCT_LIST = gql`
+const PRODUCT_SINGLE = gql`
   query {
-    category {
-      products {
+    product(id: "xbox-series-s") {
+      id
+      name
+      brand
+      category
+      description
+      inStock
+      gallery
+      attributes {
         id
         name
-        category
-        gallery
-        prices {
-          currency {
-            label
-            symbol
-          }
-          amount
+        type
+        items {
+          id
+          displayValue
+          value
         }
+      }
+      prices {
+        currency {
+          label
+          symbol
+        }
+        amount
       }
     }
   }
 `;
 
-const GetProductList = async () => {
-  const { loading, error, data } = await client.query({ query: PRODUCT_LIST });
+const GetProduct = async (id) => {
+  const { loading, error, data } = await client.query({ query: PRODUCT_SINGLE });
 
   if (loading) return null;
   if (error) return `Error! ${error}`;
 
-  const dataArray = [];
-
-  // data.category.products.map(({ name }) => {
-  //   dataArray.push(name);
-  // });
-
-  // return dataArray;
-  return data.category.products;
+  return data.product;
 };
 
-export default GetProductList;
+export default GetProduct;

@@ -1,0 +1,14 @@
+.product-button {
+  margin-bottom: 40px;
+}
+
+.product-description {
+  @extend %font-roboto-regular;
+  @include font($font5, $weight: 400);
+
+  ul {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}

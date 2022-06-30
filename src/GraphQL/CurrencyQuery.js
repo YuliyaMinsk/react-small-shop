@@ -22,7 +22,6 @@ const GetCurrencyList = async () => {
     dataArray.push(result);
   });
 
-  // console.log(dataArray);
   return dataArray;
 };
 

@@ -50,6 +50,16 @@ img {
 }
 
 h1 {
-  font-size: $font1;
+  @extend %font-raleway-regular;
+  @include font($font1, $weight: 400);
   text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }

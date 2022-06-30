@@ -17,7 +17,7 @@ class Router extends React.Component {
           <Route path="/" element={<Layout />}>
             <Route index element={<Category />} />
             <Route path=":category" element={<Category />} />
-            <Route path="product" element={<Product />} />
+            <Route path="product/:productid" element={<Product />} />
             <Route path="cart" element={<Cart />} />
             <Route path="*" element={<Errorpage />} />
           </Route>

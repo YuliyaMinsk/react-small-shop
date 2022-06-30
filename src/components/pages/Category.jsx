@@ -23,7 +23,6 @@ class Category extends Component {
     return (
       <>
         <h1>{this.state.category}</h1>
-        <p>Heya!! How are you? Category</p>
         <CardGrid category={this.state.category} />
       </>
     );
