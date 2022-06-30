@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class InfoProduct extends Component {
   render() {
-    console.log('Product info: ', this.props.info);
+    // console.log('Product info: ', this.props.info);
     return (
       <div className="product-gallery">
         <div className="product-brand">

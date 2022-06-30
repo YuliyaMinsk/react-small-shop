@@ -1,9 +1,9 @@
 import { gql } from '@apollo/client';
 import client from './initialization';
 
-const PRODUCT_SINGLE = gql`
+const PRODUCT_SINGLE = (id) => gql`
   query {
-    product(id: "xbox-series-s") {
+    product(id: "${id}") {
       id
       name
       brand
@@ -33,12 +33,12 @@ const PRODUCT_SINGLE = gql`
 `;
 
 const GetProduct = async (id) => {
-  const { loading, error, data } = await client.query({ query: PRODUCT_SINGLE });
+  const { loading, error, data } = await client.query({ query: PRODUCT_SINGLE(id) });
 
   if (loading) return null;
   if (error) return `Error! ${error}`;
 
-  return data.product;
+  return data.product ? data.product : [];
 };
 
 export default GetProduct;

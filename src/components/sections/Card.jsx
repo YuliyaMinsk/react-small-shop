@@ -5,7 +5,7 @@ class Card extends Component {
   render() {
     return (
       <div className="card">
-        <a href={`/product/${this.props.product.id}`}>
+        <Link to={`/product/${this.props.product.id}`}>
           <span className="card-image-container">
             <img
               className="card-image"
@@ -15,7 +15,7 @@ class Card extends Component {
           </span>
           <p className="card-title">{`${this.props.product.brand} ${this.props.product.name}`}</p>
           <p className="card-price">{this.props.product.prices[0].amount}</p>
-        </a>
+        </Link>
       </div>
     );
   }
