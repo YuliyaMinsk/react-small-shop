@@ -38,7 +38,7 @@ const GetProduct = async (id) => {
   if (loading) return null;
   if (error) return `Error! ${error}`;
 
-  return data.product ? data.product : [];
+  return data.product;
 };
 
 export default GetProduct;

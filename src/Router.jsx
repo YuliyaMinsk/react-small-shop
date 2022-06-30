@@ -7,7 +7,7 @@ import Layout from './components/layouts/Layout';
 import Category from './components/pages/Category';
 import Cart from './components/pages/Cart';
 import Product from './components/pages/Product';
-import Errorpage from './components/pages/Errorpage';
+import ErrorPage from './components/pages/ErrorPage';
 
 class Router extends React.Component {
   render() {
@@ -16,10 +16,10 @@ class Router extends React.Component {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Category />} />
-            <Route path=":category" element={<Category />} />
+            <Route path="category/:category" element={<Category />} />
             <Route path="product/:productid" element={<Product />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="*" element={<Errorpage />} />
+            <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

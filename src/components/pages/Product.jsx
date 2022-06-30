@@ -14,7 +14,7 @@ function getProductID() {
 class Product extends Component {
   constructor(props) {
     super(props);
-    this.state = { product: [], received: false };
+    this.state = { product: null, received: true };
   }
 
   componentDidMount() {
@@ -22,25 +22,30 @@ class Product extends Component {
     let promises = GetProduct(productID);
 
     promises.then((result) => {
-      this.setState({ product: result });
-      this.setState({ received: true });
+      if (!result) {
+        this.setState({ received: false });
+      } else {
+        this.setState({ received: true });
+        this.setState({ product: result });
+      }
     });
   }
 
   render() {
     return (
       <div>
-        {this.state.received && !this.state.product.hasOwnProperty('id') ? (
+        {this.state.received ? (
+          this.state.product !== null && (
+            <div>
+              <GalleryProduct gallery={this.state.product.gallery} />
+              <InfoProduct info={this.state.product} />
+            </div>
+          )
+        ) : (
           <div>
             <Navigate to="/" />
           </div>
-        ) : (
-          ''
         )}
-        <div>
-          <GalleryProduct gallery={this.state.product.gallery} />
-          <InfoProduct info={this.state.product} />
-        </div>
       </div>
     );
   }

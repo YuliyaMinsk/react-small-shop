@@ -27,7 +27,7 @@ class Header extends Component {
       <header>
         <div className="navigation">
           {this.state.categories.map((name) => (
-            <NavLink to={name === 'all' ? `/` : `${name}`} key={name}>{`${name}`}</NavLink>
+            <NavLink to={name === 'all' ? `/` : `category/${name}`} key={name}>{`${name}`}</NavLink>
           ))}
         </div>
         <div>
