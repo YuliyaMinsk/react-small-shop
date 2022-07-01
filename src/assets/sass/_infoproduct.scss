@@ -1,14 +1,114 @@
-.product-button {
-  margin-bottom: 40px;
-}
+.product-info {
+  h1 {
+    @extend %font-raleway-semibold;
+    @include font($font2, $weight: 600);
+    margin-bottom: 16px;
+  }
+  h2 {
+    @extend %font-raleway-regular;
+    @include font($font2, $weight: 400);
+    margin-bottom: 43px;
+  }
 
-.product-description {
-  @extend %font-roboto-regular;
-  @include font($font5, $weight: 400);
+  $colors: (
+    red: #db2828,
+    orange: #f2711c,
+    yellow: #fbbd08,
+    olive: #b5cc18,
+    green: #21ba45,
+    teal: #00b5ad,
+    blue: #2185d0,
+    violet: #6435c9,
+    purple: #a333c8,
+    pink: #e03997,
+  );
 
-  ul {
-    li {
-      margin-bottom: 10px;
+  .product-attributes {
+    margin-bottom: 25px;
+
+    .product-attribute.text {
+      @extend %font-sourcesans-regular;
+      @include font($font5, $weight: 400);
+
+      input[type='radio'] {
+        display: none;
+        &:checked + label {
+          span {
+            color: $color-light;
+            background-color: $color-dark;
+          }
+        }
+      }
+
+      label {
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+        border: 2px solid $color-dark;
+        &:hover {
+          span {
+            color: $color-light;
+            background-color: $color-dark;
+          }
+        }
+        span {
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 14px 22px;
+          transition: transform 0.2s ease-in-out;
+        }
+      }
     }
+
+    .product-attribute.swatch {
+      input[type='radio'] {
+        display: none;
+        &:checked + label {
+          border: 2px solid $color-primary;
+          span {
+            display: none;
+          }
+        }
+      }
+
+      label {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        margin-right: 10px;
+        cursor: pointer;
+        border: 2px solid $color-gray;
+        &:hover {
+          span {
+            display: none;
+          }
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .product-button {
+    margin-bottom: 40px;
+  }
+
+  .product-description {
+    @extend %font-roboto-regular;
+    @include font($font5, $weight: 400);
+
+    ul {
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .product-subtitle {
+    @extend %font-robotocond-bold;
+    @include font($font4, $weight: 700);
+    text-transform: uppercase;
   }
 }

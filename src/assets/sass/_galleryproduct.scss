@@ -1,15 +1,4 @@
 .product-gallery {
   display: flex;
   flex-direction: column;
-
-  h1 {
-    @extend %font-raleway-semibold;
-    @include font($font2, $weight: 600);
-    margin-bottom: 16px;
-  }
-  h2 {
-    @extend %font-raleway-regular;
-    @include font($font2, $weight: 400);
-    margin-bottom: 43px;
-  }
 }
