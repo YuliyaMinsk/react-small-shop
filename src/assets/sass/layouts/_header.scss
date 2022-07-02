@@ -38,7 +38,7 @@ header {
   }
 
   .logo {
-    background-image: url('../images/logo.svg');
+    background-image: url('../../images/logo.svg');
     background-repeat: no-repeat;
     width: 41px;
     height: 41px;
@@ -53,7 +53,7 @@ header {
     .currency {
       display: inline-block;
       position: relative;
-      background-image: url('../images/currency-down.svg');
+      background-image: url('../../images/currency-down.svg');
       background-repeat: no-repeat;
       background-position: center;
       width: 41px;
@@ -94,7 +94,7 @@ header {
     }
 
     .cart {
-      background-image: url('../images/cart.svg');
+      background-image: url('../../images/cart.svg');
       background-repeat: no-repeat;
       background-position: center;
       width: 41px;

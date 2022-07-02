@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Router from './Router';
 import { ApolloProvider } from '@apollo/react-hooks';
 
-import client from './GraphQL/initialization';
+import client from './graphql/initialization';
 import './index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

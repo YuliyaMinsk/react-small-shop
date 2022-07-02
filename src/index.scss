@@ -1,12 +1,12 @@
-@import './src/assets/sass/abstract';
-@import './src/assets/sass/base';
-@import './src/assets/sass/fonts';
-@import './src/assets/sass/button';
+@import './src/assets/sass/abstract/abstract';
+@import './src/assets/sass/abstract/base';
+@import './src/assets/sass/abstract/fonts';
 
-@import './src/assets/sass/category';
+@import './src/assets/sass/components/button';
+@import './src/assets/sass/components/card';
+@import './src/assets/sass/components/cardgrid';
+@import './src/assets/sass/components/galleryproduct';
+@import './src/assets/sass/components/infoproduct';
 
-@import './src/assets/sass/header';
-@import './src/assets/sass/cardgrid';
-@import './src/assets/sass/card';
-@import './src/assets/sass/galleryproduct';
-@import './src/assets/sass/infoproduct';
+@import './src/assets/sass/layouts/header';
+@import './src/assets/sass/layouts/category';

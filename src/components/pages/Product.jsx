@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navigate } from 'react-router-dom';
 
-import GetProduct from '../../GraphQL/ProductQuery';
+import GetProduct from '../../graphql/ProductQuery';
 import GalleryProduct from '../sections/GalleryProduct';
 import InfoProduct from '../sections/InfoProduct';
 

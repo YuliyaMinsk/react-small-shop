@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import GetCategoryList from '../../GraphQL/CategoryQuery';
-import GetCurrencyList from '../../GraphQL/CurrencyQuery';
+import GetCategoryList from '../../graphql/CategoryQuery';
+import GetCurrencyList from '../../graphql/CurrencyQuery';
 
 class Header extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import GetProductList from '../../GraphQL/ProductListQuery';
+import GetProductList from '../../graphql/ProductListQuery';
 import Card from './Card';
 
 class CardGrid extends Component {
